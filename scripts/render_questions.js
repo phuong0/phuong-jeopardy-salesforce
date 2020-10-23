@@ -1,11 +1,3 @@
-let categories = [
-  "Robots",
-  "Nicknames",
-  "Famous first words",
-  "Going 'dark'",
-  "Fictional companies",
-  "Painfully obvious"
-];
 let numCategories = categories.length;
 let questionValues = [100, 200, 300, 400, 500];
 
@@ -52,8 +44,8 @@ function renderQuestions() {
         "'>" +
         questionValues[j] +
         "</div>";
-      console.log(str);
     }
+    console.log(str);
     $("#questions").append(str + "</div>");
   }
 }
