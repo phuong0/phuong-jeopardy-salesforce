@@ -62,24 +62,13 @@ function questionOnClick(categoryIndex, moneyValue) {
   $("#question-modal-show-answer")
     .click(() => {
       // Add code here
-      //maybe change the getelementbyid thing since
-      //it only works when the user hasn't click show answer
-      document.getElementById("question").classList.add("clicked");
       answerOnClick(categoryIndex, moneyValue);
     })
     .show();
 
   $("#question-modal-close").click(() => {
     // Add code here
-    console.log(
-      document.getElementById("question").classList.contains("clicked")
-    );
-    if (document.getElementById("question").classList.contains("clicked")) {
-      hideQuestionPopup();
-    } else {
-      hideQuestionPopup();
-      console.log("score should go down the amount");
-    }
+    hideQuestionPopup();
   });
   $("#question-modal").modal("show");
 }
@@ -91,6 +80,9 @@ function getQuestion(categoryIndex, moneyValue) {
 
 // Hides the question popup.
 function hideQuestionPopup() {
+  let currentScore = getCurrentScore();
+  currentScore -= currentQuestionValue;
+  $("#current-score").html(getFormattedScore(currentScore));
   $("#question-modal").modal("hide");
 }
 
