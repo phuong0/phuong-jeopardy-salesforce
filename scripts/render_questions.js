@@ -39,13 +39,12 @@ function renderQuestions() {
     let str = "<div class='questions-column'>";
     for (let j = 0; j < questionValues.length; j++) {
       str +=
-        "<div class='question-cell' data-category='" +
+        "<div id='question' class='question-cell' data-category='" +
         i +
         "'>" +
         questionValues[j] +
         "</div>";
     }
-    console.log(str);
     $("#questions").append(str + "</div>");
   }
 }
