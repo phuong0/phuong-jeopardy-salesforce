@@ -60,7 +60,7 @@ function addToScore() {
 
 function computeScore(sign) {
   let currentScore = getCurrentScore();
-  if (sign == "positve") {
+  if (sign === "positve") {
     currentScore += currentQuestionValue;
   } else {
     currentScore -= currentQuestionValue;

@@ -81,7 +81,6 @@ function getQuestion(categoryIndex, moneyValue) {
 // Hides the question popup.
 function hideQuestionPopup() {
   let currentScore = getCurrentScore();
-  currentScore -= currentQuestionValue;
   $("#current-score").html(getFormattedScore(currentScore));
   $("#question-modal").modal("hide");
 }
